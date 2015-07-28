@@ -38,10 +38,14 @@ Copyright (C) 2015, **DLR** German Aerospace Center
 ## Development and contribution
 
 The library is developed by:
+
  - Alexander Pollok
  - Dirk Zimmer
+ - 
 from the German Aerospace Center (DLR) and
+
  - Francesco Casella
+
 from the Politecnico di Milano.
 
 
