@@ -707,8 +707,8 @@ update: 2015-07-27
       parameter Real lambda = 0.5
         "Exponent of operator (-1=integrator, 1=derivative)";
 
-      parameter Real w_lower(max=1) = 0.001 "Lower fitting frequency [1/s]";
-      parameter Real w_upper(min=1) = 1000 "Higher fitting frequency [1/s]";
+      parameter Real w_lower(max=1) = 0.0001 "Lower fitting frequency [1/s]";
+      parameter Real w_upper(min=1) = 10000 "Higher fitting frequency [1/s]";
 
       parameter Modelica.Blocks.Types.Init initType=init.InitialState
         "Type of initialization (1: no init, 2: steady state, 3: initial state, 4: initial output)"
@@ -2789,6 +2789,59 @@ Slab"),       Rectangle(
             StopTime=20));
     end ThermalDiffusion2;
 
+    model PlanetSurfaceTemperature
+      extends Modelica.Icons.Example;
+        SemiInfiniteSlab semiInfiniteSlab1(
+          A=1,
+          k=1.6,
+          alpha=0.7e-6,
+          T_0=283.15)
+          annotation (Placement(transformation(extent={{60,-10},{80,10}})));
+        Modelica.Thermal.HeatTransfer.Sensors.TemperatureSensor tempSensor
+          annotation (Placement(transformation(extent={{60,-40},{80,-20}})));
+        Modelica.Thermal.HeatTransfer.Sources.PrescribedHeatFlow
+          prescribedHeatflow
+          annotation (Placement(transformation(extent={{12,-10},{32,10}})));
+        Modelica.Blocks.Sources.RealExpression radiationIn(y=max(0,
+              solarconstant.k*sin(time/daylength.k*2*Modelica.Constants.pi)))
+          annotation (Placement(transformation(extent={{-98,-10},{-30,10}})));
+        Modelica.Blocks.Sources.RealExpression radiationOut(y=boltzmann.k*(
+              tempSensor.T^4 - cosmicbackground.k^4))
+          annotation (Placement(transformation(extent={{-98,-30},{-30,-10}})));
+        Modelica.Blocks.Math.Feedback feedback
+          annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
+        Modelica.Blocks.Sources.Constant solarconstant(k=1367)
+          annotation (Placement(transformation(extent={{-80,30},{-60,50}})));
+        Modelica.Blocks.Sources.Constant daylength(k=86400)
+          annotation (Placement(transformation(extent={{-50,30},{-30,50}})));
+        Modelica.Blocks.Sources.Constant boltzmann(k=5.67*1e-8)
+          annotation (Placement(transformation(extent={{-20,30},{0,50}})));
+        Modelica.Blocks.Sources.Constant cosmicbackground(k=2.7)
+          annotation (Placement(transformation(extent={{10,30},{30,50}})));
+    equation
+
+        connect(prescribedHeatflow.port,tempSensor. port) annotation (Line(
+              points={{32,0},{40,0},{40,-30},{60,-30}},
+                                                    color={191,0,0}));
+        connect(prescribedHeatflow.port,semiInfiniteSlab1. heatPort)
+          annotation (Line(points={{32,0},{60,0}},
+                           color={191,0,0}));
+        connect(feedback.y, prescribedHeatflow.Q_flow)
+          annotation (Line(points={{-1,0},{12,0}}, color={0,0,127}));
+        connect(radiationIn.y, feedback.u1) annotation (Line(points={{-26.6,0},
+                {-26.6,0},{-18,0}}, color={0,0,127}));
+        connect(radiationOut.y, feedback.u2) annotation (Line(points={{-26.6,
+                -20},{-26.6,-20},{-10,-20},{-10,-8}}, color={0,0,127}));
+      annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+                  -100},{100,100}}), graphics={Rectangle(
+                extent={{-100,100},{100,-100}},
+                lineColor={135,135,135},
+                fillPattern=FillPattern.Solid,
+                fillColor={255,255,255})}),
+          experiment(StopTime=432000, Tolerance=1e-006),
+          __Dymola_experimentSetupOutput);
+    end PlanetSurfaceTemperature;
+
     model SemiInfiniteSlab
         "Thermal model of a 1-D heat conducting element, semi-infinite (infinite in one direction)"
 
@@ -2800,7 +2853,7 @@ Slab"),       Rectangle(
           "Starting temperature [K]";
 
       Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a heatPort   annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
-      Approximations.OustaloupOperator halfInt(order=3, lambda=-0.5);
+      Approximations.OustaloupOperator halfInt(order=4, lambda=-0.5, w_lower=1e-8, w_upper=1);
 
     equation
       halfInt.u = heatPort.Q_flow;
