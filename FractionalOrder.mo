@@ -4,19 +4,19 @@ package FractionalOrder
 /*
                        (`.-,')
                      .-'     ;
-                 _.-'   , `,-     ___            _   _               _  ___         _         ___         _        
+                 _.-'   , `,-     ___            _   _               _  ___         _         ___         _
            _ _.-'     .'  /._    | __| _ __ _ __| |_(_)___ _ _  __ _| |/ _ \ _ _ __| |___ _ _/ __|_  _ __| |_ ___ _ __  ___
          .' `  _.-.  /  ,'._;)   | _| '_/ _` / _|  _| / _ \ ' \/ _` | | (_) | '_/ _` / -_) '_\__ \ || (_-<  _/ -_) '  \(_-<
         (       .  )-| (         |_||_| \__,_\__|\__|_\___/_||_\__,_|_|\___/|_| \__,_\___|_| |___/\_, /__/\__\___|_|_|_/__/
-        )`,_ ,'_,'  \_;)                                                                          |__/  
+        )`,_ ,'_,'  \_;)                                                                          |__/
  ('_  _,'.'  (___,))
-  `-:;.-'           
+  `-:;.-'
 
 DLR - Institute of System Dynamics and Control
 author: alexander.pollok@dlr.de
 create: 2015-03-16
 update: 2015-07-27
- 
+
 */
 
 package UsersGuide "User's Guide"
@@ -31,23 +31,23 @@ package UsersGuide "User's Guide"
   This block applies an approximated fractional differential operation to the input u. <br>
   The user can specify the fitting frequency interval, approximation order and fraction of differentiation (e.g., 0.5 for a half-differentiation or -1 for normal integration).<br>
   The approximation is more or less exact contingent on the following conditions:</p>
-  
+
   <p>
   1) the relevant dynamics of the simulated model are inside the specified fitting frequency interval <br>
   2) the fitting frequency interval (measured in orders of magnitude) is not too large <br>
   3) the approximation order is high enough<br>
   4) the absolute value of the differentiation fraction is low enough
   </p>
-  
+
   <p>
   Points 2-4 are interdependent on each other. For a large frequency interval and a large fraction of differentiation, a high approximation order is needed. <br>
-  If in doubt, it is suggested to open the 
+  If in doubt, it is suggested to open the
   <a href=\"FractionalOrder.Approximations.OustaloupOperator\">FractionalOrder.Approximations.OustaloupOperator</a>-model, type in the needed parameters, <br>
   and use the LinearSystems.Bodeplot function to check the accuracy of the resulting Approximation. <br>
   Also, the predefined values are quite sensible.
   </p>
   <br>
-  
+
 </html>", revisions="<html>
 <p> <b>Developed 2015 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
@@ -72,7 +72,7 @@ table   { solid #000; border-collapse: collapse;}
 </style>
 </head>
 
-<p>All files in this directory (Fractional Order) and in all subdirectories, are licensed by the <u><b>DLR German Aerospace Center</b></u> 
+<p>All files in this directory (Fractional Order) and in all subdirectories, are licensed by the <u><b>DLR German Aerospace Center</b></u>
 under the <u><b>Modelica License 2</b></u>. </p>
 
 <p style=\"margin-left: 40px;\"><b>Licensor:</b><br>
@@ -684,13 +684,13 @@ end UsersGuide;
         /*
                        (`.-,')
                      .-'     ;
-                 _.-'   , `,-     ___          _        _                ___                     _          
-           _ _.-'     .'  /._    / _ \ _  _ __| |_ __ _| |___ _  _ _ __ / _ \ _ __  ___ _ _ __ _| |_ ___ _ _ 
+                 _.-'   , `,-     ___          _        _                ___                     _
+           _ _.-'     .'  /._    / _ \ _  _ __| |_ __ _| |___ _  _ _ __ / _ \ _ __  ___ _ _ __ _| |_ ___ _ _
          .' `  _.-.  /  ,'._;)  | (_) | || (_-<  _/ _` | / _ \ || | '_ V (_) | '_ \/ -_) '_/ _` |  _/ _ \ '_|
-        (       .  )-| (         \___/ \_,_/__/\__\__,_|_\___/\_,_| .__/\___/| .__/\___|_| \__,_|\__\___/_| 
-        )`,_ ,'_,'  \_;)                                          |_|        |_|                        
+        (       .  )-| (         \___/ \_,_/__/\__\__,_|_\___/\_,_| .__/\___/| .__/\___|_| \__,_|\__\___/_|
+        )`,_ ,'_,'  \_;)                                          |_|        |_|
  ('_  _,'.'  (___,))
-  `-:;.-'           
+  `-:;.-'
 
 DLR - Institute of System Dynamics and Control
 author: alexander.pollok@dlr.de
@@ -771,8 +771,7 @@ update: 2015-07-27
         y = y_start;
       end if;
 
-      annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                -100},{100,100}}), graphics), Icon(coordinateSystem(
+      annotation ( Icon(coordinateSystem(
               preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
             Rectangle(
               extent={{-100,100},{100,-100}},
@@ -782,7 +781,7 @@ update: 2015-07-27
             Text(
               extent={{-100,72},{100,34}},
               lineColor={144,144,144},
-              textString="Oustaloup 
+              textString="Oustaloup
 Operator"), Text(
               extent={{-24,-22},{18,-72}},
               lineColor={144,144,144},
@@ -804,19 +803,19 @@ Operator"), Text(
           /*
                        (`.-,')
                      .-'     ;
-                 _.-'   , `,-   __  __        ___     _                     _       
-           _ _.-'     .'  /._   \ \/ /  _ ___|_ _|_ _| |_ ___ __ _ _ _ __ _| |_ ___ _ _ 
+                 _.-'   , `,-   __  __        ___     _                     _
+           _ _.-'     .'  /._   \ \/ /  _ ___|_ _|_ _| |_ ___ __ _ _ _ __ _| |_ ___ _ _
          .' `  _.-.  /  ,'._;)   >  < || / -_)| || ' \  _/ -_) _` | '_/ _` |  _/ _ \ '_|
-        (       .  )-| (        /_/\_\_,_\___|___|_||_\__\___\__, |_| \__,_|\__\___/_| 
-        )`,_ ,'_,'  \_;)                                     |___/     
+        (       .  )-| (        /_/\_\_,_\___|___|_||_\__\___\__, |_| \__,_|\__\___/_|
+        )`,_ ,'_,'  \_;)                                     |___/
  ('_  _,'.'  (___,))
-  `-:;.-'           
+  `-:;.-'
 
 DLR - Institute of System Dynamics and Control
 author: alexander.pollok@dlr.de
 create: 2015-03-20
 update: 2015-03-23
- 
+
   */
 
         parameter Integer order(min=1, max=3) = 2
@@ -861,8 +860,7 @@ update: 2015-03-23
        then {0, -b*wh*(d*wb/b)^alpha*(b*wh/d)^(alpha+6/5), -(b*wh*((d*wb/b)^((4/5)*alpha+2/5)+(d*wb/b)^((4/5)*alpha-2/5)+(d*wb/b)^((4/5)*alpha+4/5)+(d*wb/b)^((4/5)*alpha-4/5)+(d*wb/b)^((4/5)*alpha))+d*(d*wb/b)^alpha)*(b*wh/d)^(alpha+6/5), -(d*((d*wb/b)^((4/5)*alpha+2/5)+(d*wb/b)^((4/5)*alpha-2/5)+(d*wb/b)^((4/5)*alpha+4/5)+(d*wb/b)^((4/5)*alpha-4/5)+(d*wb/b)^((4/5)*alpha))+b*wh*(2*(d*wb/b)^((3/5)*alpha+2/5)+(d*wb/b)^((3/5)*alpha-6/5)+2*(d*wb/b)^((3/5)*alpha)+(d*wb/b)^((3/5)*alpha+4/5)+(d*wb/b)^((3/5)*alpha-4/5)+(d*wb/b)^((3/5)*alpha+6/5)+2*(d*wb/b)^((3/5)*alpha-2/5)))*(b*wh/d)^(alpha+6/5), -(d*(2*(d*wb/b)^((3/5)*alpha+2/5)+(d*wb/b)^((3/5)*alpha-6/5)+2*(d*wb/b)^((3/5)*alpha)+(d*wb/b)^((3/5)*alpha+4/5)+(d*wb/b)^((3/5)*alpha-4/5)+(d*wb/b)^((3/5)*alpha+6/5)+2*(d*wb/b)^((3/5)*alpha-2/5))+b*wh*((d*wb/b)^((2/5)*alpha+4/5)+2*(d*wb/b)^((2/5)*alpha)+(d*wb/b)^((2/5)*alpha+6/5)+(d*wb/b)^((2/5)*alpha-6/5)+2*(d*wb/b)^((2/5)*alpha-2/5)+(d*wb/b)^((2/5)*alpha-4/5)+2*(d*wb/b)^((2/5)*alpha+2/5)))*(b*wh/d)^(alpha+6/5), -(d*((d*wb/b)^((2/5)*alpha+4/5)+2*(d*wb/b)^((2/5)*alpha)+(d*wb/b)^((2/5)*alpha+6/5)+(d*wb/b)^((2/5)*alpha-6/5)+2*(d*wb/b)^((2/5)*alpha-2/5)+(d*wb/b)^((2/5)*alpha-4/5)+2*(d*wb/b)^((2/5)*alpha+2/5))+b*wh*((d*wb/b)^((1/5)*alpha+2/5)+(d*wb/b)^((1/5)*alpha)+(d*wb/b)^((1/5)*alpha+4/5)+(d*wb/b)^((1/5)*alpha-4/5)+(d*wb/b)^((1/5)*alpha-2/5)))*(b*wh/d)^(alpha+6/5), -(b*wh+d*((d*wb/b)^((1/5)*alpha+2/5)+(d*wb/b)^((1/5)*alpha)+(d*wb/b)^((1/5)*alpha+4/5)+(d*wb/b)^((1/5)*alpha-4/5)+(d*wb/b)^((1/5)*alpha-2/5)))*(b*wh/d)^(alpha+6/5), -d*(b*wh/d)^(alpha+6/5)}
        else {0, -b*wh*(d*wb/b)^alpha*(b*wh/d)^(alpha+12/7), -(b*wh*((d*wb/b)^((6/7)*alpha+6/7)+(d*wb/b)^((6/7)*alpha-2/7)+(d*wb/b)^((6/7)*alpha+2/7)+(d*wb/b)^((6/7)*alpha-4/7)+(d*wb/b)^((6/7)*alpha-6/7)+(d*wb/b)^((6/7)*alpha+4/7)+(d*wb/b)^((6/7)*alpha))+d*(d*wb/b)^alpha)*(b*wh/d)^(alpha+12/7), -(b*wh*(3*(d*wb/b)^((5/7)*alpha-2/7)+2*(d*wb/b)^((5/7)*alpha+4/7)+2*(d*wb/b)^((5/7)*alpha+6/7)+2*(d*wb/b)^((5/7)*alpha-4/7)+3*(d*wb/b)^((5/7)*alpha)+(d*wb/b)^((5/7)*alpha-10/7)+(d*wb/b)^((5/7)*alpha+8/7)+3*(d*wb/b)^((5/7)*alpha+2/7)+(d*wb/b)^((5/7)*alpha+10/7)+2*(d*wb/b)^((5/7)*alpha-6/7)+(d*wb/b)^((5/7)*alpha-8/7))+d*((d*wb/b)^((6/7)*alpha+6/7)+(d*wb/b)^((6/7)*alpha-2/7)+(d*wb/b)^((6/7)*alpha+2/7)+(d*wb/b)^((6/7)*alpha-4/7)+(d*wb/b)^((6/7)*alpha-6/7)+(d*wb/b)^((6/7)*alpha+4/7)+(d*wb/b)^((6/7)*alpha)))*(b*wh/d)^(alpha+12/7), -(b*wh*(4*(d*wb/b)^((4/7)*alpha-4/7)+2*(d*wb/b)^((4/7)*alpha-8/7)+2*(d*wb/b)^((4/7)*alpha+8/7)+4*(d*wb/b)^((4/7)*alpha+4/7)+4*(d*wb/b)^((4/7)*alpha-2/7)+(d*wb/b)^((4/7)*alpha-12/7)+(d*wb/b)^((4/7)*alpha-10/7)+5*(d*wb/b)^((4/7)*alpha)+(d*wb/b)^((4/7)*alpha+10/7)+4*(d*wb/b)^((4/7)*alpha+2/7)+(d*wb/b)^((4/7)*alpha+12/7)+3*(d*wb/b)^((4/7)*alpha-6/7)+3*(d*wb/b)^((4/7)*alpha+6/7))+d*(3*(d*wb/b)^((5/7)*alpha-2/7)+2*(d*wb/b)^((5/7)*alpha+4/7)+2*(d*wb/b)^((5/7)*alpha+6/7)+2*(d*wb/b)^((5/7)*alpha-4/7)+3*(d*wb/b)^((5/7)*alpha)+(d*wb/b)^((5/7)*alpha-10/7)+(d*wb/b)^((5/7)*alpha+8/7)+3*(d*wb/b)^((5/7)*alpha+2/7)+(d*wb/b)^((5/7)*alpha+10/7)+2*(d*wb/b)^((5/7)*alpha-6/7)+(d*wb/b)^((5/7)*alpha-8/7)))*(b*wh/d)^(alpha+12/7), -(d*(4*(d*wb/b)^((4/7)*alpha-4/7)+2*(d*wb/b)^((4/7)*alpha-8/7)+2*(d*wb/b)^((4/7)*alpha+8/7)+4*(d*wb/b)^((4/7)*alpha+4/7)+4*(d*wb/b)^((4/7)*alpha-2/7)+(d*wb/b)^((4/7)*alpha-12/7)+(d*wb/b)^((4/7)*alpha-10/7)+5*(d*wb/b)^((4/7)*alpha)+(d*wb/b)^((4/7)*alpha+10/7)+4*(d*wb/b)^((4/7)*alpha+2/7)+(d*wb/b)^((4/7)*alpha+12/7)+3*(d*wb/b)^((4/7)*alpha-6/7)+3*(d*wb/b)^((4/7)*alpha+6/7))+b*wh*((d*wb/b)^((3/7)*alpha-12/7)+4*(d*wb/b)^((3/7)*alpha-2/7)+(d*wb/b)^((3/7)*alpha-10/7)+(d*wb/b)^((3/7)*alpha+12/7)+2*(d*wb/b)^((3/7)*alpha-8/7)+5*(d*wb/b)^((3/7)*alpha)+3*(d*wb/b)^((3/7)*alpha+6/7)+3*(d*wb/b)^((3/7)*alpha-6/7)+4*(d*wb/b)^((3/7)*alpha-4/7)+4*(d*wb/b)^((3/7)*alpha+4/7)+(d*wb/b)^((3/7)*alpha+10/7)+4*(d*wb/b)^((3/7)*alpha+2/7)+2*(d*wb/b)^((3/7)*alpha+8/7)))*(b*wh/d)^(alpha+12/7), -(b*wh*((d*wb/b)^((2/7)*alpha-8/7)+3*(d*wb/b)^((2/7)*alpha)+2*(d*wb/b)^((2/7)*alpha-6/7)+2*(d*wb/b)^((2/7)*alpha-4/7)+3*(d*wb/b)^((2/7)*alpha-2/7)+(d*wb/b)^((2/7)*alpha-10/7)+2*(d*wb/b)^((2/7)*alpha+6/7)+(d*wb/b)^((2/7)*alpha+10/7)+3*(d*wb/b)^((2/7)*alpha+2/7)+2*(d*wb/b)^((2/7)*alpha+4/7)+(d*wb/b)^((2/7)*alpha+8/7))+d*((d*wb/b)^((3/7)*alpha-12/7)+4*(d*wb/b)^((3/7)*alpha-2/7)+(d*wb/b)^((3/7)*alpha-10/7)+(d*wb/b)^((3/7)*alpha+12/7)+2*(d*wb/b)^((3/7)*alpha-8/7)+5*(d*wb/b)^((3/7)*alpha)+3*(d*wb/b)^((3/7)*alpha+6/7)+3*(d*wb/b)^((3/7)*alpha-6/7)+4*(d*wb/b)^((3/7)*alpha-4/7)+4*(d*wb/b)^((3/7)*alpha+4/7)+(d*wb/b)^((3/7)*alpha+10/7)+4*(d*wb/b)^((3/7)*alpha+2/7)+2*(d*wb/b)^((3/7)*alpha+8/7)))*(b*wh/d)^(alpha+12/7), -(b*wh*((d*wb/b)^((1/7)*alpha-2/7)+(d*wb/b)^((1/7)*alpha-6/7)+(d*wb/b)^((1/7)*alpha-4/7)+(d*wb/b)^((1/7)*alpha+6/7)+(d*wb/b)^((1/7)*alpha)+(d*wb/b)^((1/7)*alpha+2/7)+(d*wb/b)^((1/7)*alpha+4/7))+d*((d*wb/b)^((2/7)*alpha-8/7)+3*(d*wb/b)^((2/7)*alpha)+2*(d*wb/b)^((2/7)*alpha-6/7)+2*(d*wb/b)^((2/7)*alpha-4/7)+3*(d*wb/b)^((2/7)*alpha-2/7)+(d*wb/b)^((2/7)*alpha-10/7)+2*(d*wb/b)^((2/7)*alpha+6/7)+(d*wb/b)^((2/7)*alpha+10/7)+3*(d*wb/b)^((2/7)*alpha+2/7)+2*(d*wb/b)^((2/7)*alpha+4/7)+(d*wb/b)^((2/7)*alpha+8/7)))*(b*wh/d)^(alpha+12/7), -(b*wh+d*((d*wb/b)^((1/7)*alpha-2/7)+(d*wb/b)^((1/7)*alpha-6/7)+(d*wb/b)^((1/7)*alpha-4/7)+(d*wb/b)^((1/7)*alpha+6/7)+(d*wb/b)^((1/7)*alpha)+(d*wb/b)^((1/7)*alpha+2/7)+(d*wb/b)^((1/7)*alpha+4/7)))*(b*wh/d)^(alpha+12/7), -d*(b*wh/d)^(alpha+12/7)};
 
-        annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                  -100},{100,100}}), graphics), Icon(coordinateSystem(
+        annotation ( Icon(coordinateSystem(
                 preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
               Rectangle(
                 extent={{-100,100},{100,-100}},
@@ -908,19 +906,19 @@ Integrator"), Text(
           /*
                        (`.-,')
                      .-'     ;
-                 _.-'   , `,-    ___          _              ___          _          _   _       
-           _ _.-'     .'  /._   / __|__ _ _ _| |___ ___ _ _ |   \ ___ _ _(_)_ ____ _| |_(_)_ _____ 
+                 _.-'   , `,-    ___          _              ___          _          _   _
+           _ _.-'     .'  /._   / __|__ _ _ _| |___ ___ _ _ |   \ ___ _ _(_)_ ____ _| |_(_)_ _____
          .' `  _.-.  /  ,'._;) | (__/ _` | '_| (_-</ _ \ ' \| |) / -_) '_| \ V / _` |  _| \ V / -_)
-        (       .  )-| (        \___\__,_|_| |_/__/\___/_||_|___/\___|_| |_|\_/\__,_|\__|_|\_/\___| 
-        )`,_ ,'_,'  \_;)                                                    
+        (       .  )-| (        \___\__,_|_| |_/__/\___/_||_|___/\___|_| |_|\_/\__,_|\__|_|\_/\___|
+        )`,_ ,'_,'  \_;)
  ('_  _,'.'  (___,))
-  `-:;.-'           
+  `-:;.-'
 
 DLR - Institute of System Dynamics and Control
 author: alexander.pollok@dlr.de
 create: 2015-03-16
 update: 2015-03-20
- 
+
   */
 
         parameter Integer order(min=1, max=3) = 2
@@ -959,8 +957,7 @@ update: 2015-03-20
        then {(-alpha^3+3*alpha^2-3*alpha+1)*(1-alpha), (-alpha^3+3*alpha^2-3*alpha+1)*(1+alpha)+(3*alpha^3+alpha^2+alpha+3)*(1-alpha), (3*alpha^3+alpha^2+alpha+3)*(1+alpha)+(-3*alpha^3-3*alpha^2+3*alpha+3)*(1-alpha), (-3*alpha^3-3*alpha^2+3*alpha+3)*(1+alpha)+(alpha^3-alpha^2-alpha+1)*(1-alpha), (alpha^3-alpha^2-alpha+1)*(1+alpha)}
        else {-(-alpha^9+9*alpha^8-36*alpha^7+84*alpha^6-126*alpha^5+126*alpha^4-84*alpha^3+36*alpha^2-9*alpha+1)*(-alpha^3+3*alpha^2-3*alpha+1)*(1-alpha), -(-alpha^9+9*alpha^8-36*alpha^7+84*alpha^6-126*alpha^5+126*alpha^4-84*alpha^3+36*alpha^2-9*alpha+1)*(-alpha^3+3*alpha^2-3*alpha+1)*(1+alpha)-((-alpha^9+9*alpha^8-36*alpha^7+84*alpha^6-126*alpha^5+126*alpha^4-84*alpha^3+36*alpha^2-9*alpha+1)*(3*alpha^3+alpha^2+alpha+3)+(9*alpha^9-47*alpha^8+116*alpha^7-156*alpha^6+78*alpha^5+78*alpha^4-156*alpha^3+116*alpha^2-47*alpha+9)*(-alpha^3+3*alpha^2-3*alpha+1))*(1-alpha), -((-alpha^9+9*alpha^8-36*alpha^7+84*alpha^6-126*alpha^5+126*alpha^4-84*alpha^3+36*alpha^2-9*alpha+1)*(3*alpha^3+alpha^2+alpha+3)+(9*alpha^9-47*alpha^8+116*alpha^7-156*alpha^6+78*alpha^5+78*alpha^4-156*alpha^3+116*alpha^2-47*alpha+9)*(-alpha^3+3*alpha^2-3*alpha+1))*(1+alpha)-((-alpha^9+9*alpha^8-36*alpha^7+84*alpha^6-126*alpha^5+126*alpha^4-84*alpha^3+36*alpha^2-9*alpha+1)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(9*alpha^9-47*alpha^8+116*alpha^7-156*alpha^6+78*alpha^5+78*alpha^4-156*alpha^3+116*alpha^2-47*alpha+9)*(3*alpha^3+alpha^2+alpha+3)+(-36*alpha^9+84*alpha^8-112*alpha^7+16*alpha^6+248*alpha^5-248*alpha^4-16*alpha^3+112*alpha^2-84*alpha+36)*(-alpha^3+3*alpha^2-3*alpha+1))*(1-alpha), -((-alpha^9+9*alpha^8-36*alpha^7+84*alpha^6-126*alpha^5+126*alpha^4-84*alpha^3+36*alpha^2-9*alpha+1)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(9*alpha^9-47*alpha^8+116*alpha^7-156*alpha^6+78*alpha^5+78*alpha^4-156*alpha^3+116*alpha^2-47*alpha+9)*(3*alpha^3+alpha^2+alpha+3)+(-36*alpha^9+84*alpha^8-112*alpha^7+16*alpha^6+248*alpha^5-248*alpha^4-16*alpha^3+112*alpha^2-84*alpha+36)*(-alpha^3+3*alpha^2-3*alpha+1))*(1+alpha)-((-alpha^9+9*alpha^8-36*alpha^7+84*alpha^6-126*alpha^5+126*alpha^4-84*alpha^3+36*alpha^2-9*alpha+1)*(alpha^3-alpha^2-alpha+1)+(9*alpha^9-47*alpha^8+116*alpha^7-156*alpha^6+78*alpha^5+78*alpha^4-156*alpha^3+116*alpha^2-47*alpha+9)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(-36*alpha^9+84*alpha^8-112*alpha^7+16*alpha^6+248*alpha^5-248*alpha^4-16*alpha^3+112*alpha^2-84*alpha+36)*(3*alpha^3+alpha^2+alpha+3)+(84*alpha^9-28*alpha^8+16*alpha^7+112*alpha^6-184*alpha^5-184*alpha^4+112*alpha^3+16*alpha^2-28*alpha+84)*(-alpha^3+3*alpha^2-3*alpha+1))*(1-alpha), -((-alpha^9+9*alpha^8-36*alpha^7+84*alpha^6-126*alpha^5+126*alpha^4-84*alpha^3+36*alpha^2-9*alpha+1)*(alpha^3-alpha^2-alpha+1)+(9*alpha^9-47*alpha^8+116*alpha^7-156*alpha^6+78*alpha^5+78*alpha^4-156*alpha^3+116*alpha^2-47*alpha+9)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(-36*alpha^9+84*alpha^8-112*alpha^7+16*alpha^6+248*alpha^5-248*alpha^4-16*alpha^3+112*alpha^2-84*alpha+36)*(3*alpha^3+alpha^2+alpha+3)+(84*alpha^9-28*alpha^8+16*alpha^7+112*alpha^6-184*alpha^5-184*alpha^4+112*alpha^3+16*alpha^2-28*alpha+84)*(-alpha^3+3*alpha^2-3*alpha+1))*(1+alpha)-((9*alpha^9-47*alpha^8+116*alpha^7-156*alpha^6+78*alpha^5+78*alpha^4-156*alpha^3+116*alpha^2-47*alpha+9)*(alpha^3-alpha^2-alpha+1)+(-36*alpha^9+84*alpha^8-112*alpha^7+16*alpha^6+248*alpha^5-248*alpha^4-16*alpha^3+112*alpha^2-84*alpha+36)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(84*alpha^9-28*alpha^8+16*alpha^7+112*alpha^6-184*alpha^5-184*alpha^4+112*alpha^3+16*alpha^2-28*alpha+84)*(3*alpha^3+alpha^2+alpha+3)+(-126*alpha^9-98*alpha^8+40*alpha^7-40*alpha^6-52*alpha^5+52*alpha^4+40*alpha^3-40*alpha^2+98*alpha+126)*(-alpha^3+3*alpha^2-3*alpha+1))*(1-alpha), -((9*alpha^9-47*alpha^8+116*alpha^7-156*alpha^6+78*alpha^5+78*alpha^4-156*alpha^3+116*alpha^2-47*alpha+9)*(alpha^3-alpha^2-alpha+1)+(-36*alpha^9+84*alpha^8-112*alpha^7+16*alpha^6+248*alpha^5-248*alpha^4-16*alpha^3+112*alpha^2-84*alpha+36)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(84*alpha^9-28*alpha^8+16*alpha^7+112*alpha^6-184*alpha^5-184*alpha^4+112*alpha^3+16*alpha^2-28*alpha+84)*(3*alpha^3+alpha^2+alpha+3)+(-126*alpha^9-98*alpha^8+40*alpha^7-40*alpha^6-52*alpha^5+52*alpha^4+40*alpha^3-40*alpha^2+98*alpha+126)*(-alpha^3+3*alpha^2-3*alpha+1))*(1+alpha)-((-36*alpha^9+84*alpha^8-112*alpha^7+16*alpha^6+248*alpha^5-248*alpha^4-16*alpha^3+112*alpha^2-84*alpha+36)*(alpha^3-alpha^2-alpha+1)+(84*alpha^9-28*alpha^8+16*alpha^7+112*alpha^6-184*alpha^5-184*alpha^4+112*alpha^3+16*alpha^2-28*alpha+84)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(-126*alpha^9-98*alpha^8+40*alpha^7-40*alpha^6-52*alpha^5+52*alpha^4+40*alpha^3-40*alpha^2+98*alpha+126)*(3*alpha^3+alpha^2+alpha+3)+(126*alpha^9+126*alpha^8-104*alpha^7-40*alpha^6+148*alpha^5+148*alpha^4-40*alpha^3-104*alpha^2+126*alpha+126)*(-alpha^3+3*alpha^2-3*alpha+1))*(1-alpha), -((-36*alpha^9+84*alpha^8-112*alpha^7+16*alpha^6+248*alpha^5-248*alpha^4-16*alpha^3+112*alpha^2-84*alpha+36)*(alpha^3-alpha^2-alpha+1)+(84*alpha^9-28*alpha^8+16*alpha^7+112*alpha^6-184*alpha^5-184*alpha^4+112*alpha^3+16*alpha^2-28*alpha+84)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(-126*alpha^9-98*alpha^8+40*alpha^7-40*alpha^6-52*alpha^5+52*alpha^4+40*alpha^3-40*alpha^2+98*alpha+126)*(3*alpha^3+alpha^2+alpha+3)+(126*alpha^9+126*alpha^8-104*alpha^7-40*alpha^6+148*alpha^5+148*alpha^4-40*alpha^3-104*alpha^2+126*alpha+126)*(-alpha^3+3*alpha^2-3*alpha+1))*(1+alpha)-((84*alpha^9-28*alpha^8+16*alpha^7+112*alpha^6-184*alpha^5-184*alpha^4+112*alpha^3+16*alpha^2-28*alpha+84)*(alpha^3-alpha^2-alpha+1)+(-126*alpha^9-98*alpha^8+40*alpha^7-40*alpha^6-52*alpha^5+52*alpha^4+40*alpha^3-40*alpha^2+98*alpha+126)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(126*alpha^9+126*alpha^8-104*alpha^7-40*alpha^6+148*alpha^5+148*alpha^4-40*alpha^3-104*alpha^2+126*alpha+126)*(3*alpha^3+alpha^2+alpha+3)+(-84*alpha^9-28*alpha^8+144*alpha^7-48*alpha^6-136*alpha^5+136*alpha^4+48*alpha^3-144*alpha^2+28*alpha+84)*(-alpha^3+3*alpha^2-3*alpha+1))*(1-alpha), -((84*alpha^9-28*alpha^8+16*alpha^7+112*alpha^6-184*alpha^5-184*alpha^4+112*alpha^3+16*alpha^2-28*alpha+84)*(alpha^3-alpha^2-alpha+1)+(-126*alpha^9-98*alpha^8+40*alpha^7-40*alpha^6-52*alpha^5+52*alpha^4+40*alpha^3-40*alpha^2+98*alpha+126)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(126*alpha^9+126*alpha^8-104*alpha^7-40*alpha^6+148*alpha^5+148*alpha^4-40*alpha^3-104*alpha^2+126*alpha+126)*(3*alpha^3+alpha^2+alpha+3)+(-84*alpha^9-28*alpha^8+144*alpha^7-48*alpha^6-136*alpha^5+136*alpha^4+48*alpha^3-144*alpha^2+28*alpha+84)*(-alpha^3+3*alpha^2-3*alpha+1))*(1+alpha)-((-126*alpha^9-98*alpha^8+40*alpha^7-40*alpha^6-52*alpha^5+52*alpha^4+40*alpha^3-40*alpha^2+98*alpha+126)*(alpha^3-alpha^2-alpha+1)+(126*alpha^9+126*alpha^8-104*alpha^7-40*alpha^6+148*alpha^5+148*alpha^4-40*alpha^3-104*alpha^2+126*alpha+126)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(-84*alpha^9-28*alpha^8+144*alpha^7-48*alpha^6-136*alpha^5+136*alpha^4+48*alpha^3-144*alpha^2+28*alpha+84)*(3*alpha^3+alpha^2+alpha+3)+(36*alpha^9-44*alpha^8-48*alpha^7+112*alpha^6-56*alpha^5-56*alpha^4+112*alpha^3-48*alpha^2-44*alpha+36)*(-alpha^3+3*alpha^2-3*alpha+1))*(1-alpha), -((-126*alpha^9-98*alpha^8+40*alpha^7-40*alpha^6-52*alpha^5+52*alpha^4+40*alpha^3-40*alpha^2+98*alpha+126)*(alpha^3-alpha^2-alpha+1)+(126*alpha^9+126*alpha^8-104*alpha^7-40*alpha^6+148*alpha^5+148*alpha^4-40*alpha^3-104*alpha^2+126*alpha+126)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(-84*alpha^9-28*alpha^8+144*alpha^7-48*alpha^6-136*alpha^5+136*alpha^4+48*alpha^3-144*alpha^2+28*alpha+84)*(3*alpha^3+alpha^2+alpha+3)+(36*alpha^9-44*alpha^8-48*alpha^7+112*alpha^6-56*alpha^5-56*alpha^4+112*alpha^3-48*alpha^2-44*alpha+36)*(-alpha^3+3*alpha^2-3*alpha+1))*(1+alpha)-((126*alpha^9+126*alpha^8-104*alpha^7-40*alpha^6+148*alpha^5+148*alpha^4-40*alpha^3-104*alpha^2+126*alpha+126)*(alpha^3-alpha^2-alpha+1)+(-84*alpha^9-28*alpha^8+144*alpha^7-48*alpha^6-136*alpha^5+136*alpha^4+48*alpha^3-144*alpha^2+28*alpha+84)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(36*alpha^9-44*alpha^8-48*alpha^7+112*alpha^6-56*alpha^5-56*alpha^4+112*alpha^3-48*alpha^2-44*alpha+36)*(3*alpha^3+alpha^2+alpha+3)+(-9*alpha^9+33*alpha^8-36*alpha^7-12*alpha^6+66*alpha^5-66*alpha^4+12*alpha^3+36*alpha^2-33*alpha+9)*(-alpha^3+3*alpha^2-3*alpha+1))*(1-alpha), -((126*alpha^9+126*alpha^8-104*alpha^7-40*alpha^6+148*alpha^5+148*alpha^4-40*alpha^3-104*alpha^2+126*alpha+126)*(alpha^3-alpha^2-alpha+1)+(-84*alpha^9-28*alpha^8+144*alpha^7-48*alpha^6-136*alpha^5+136*alpha^4+48*alpha^3-144*alpha^2+28*alpha+84)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(36*alpha^9-44*alpha^8-48*alpha^7+112*alpha^6-56*alpha^5-56*alpha^4+112*alpha^3-48*alpha^2-44*alpha+36)*(3*alpha^3+alpha^2+alpha+3)+(-9*alpha^9+33*alpha^8-36*alpha^7-12*alpha^6+66*alpha^5-66*alpha^4+12*alpha^3+36*alpha^2-33*alpha+9)*(-alpha^3+3*alpha^2-3*alpha+1))*(1+alpha)-((-84*alpha^9-28*alpha^8+144*alpha^7-48*alpha^6-136*alpha^5+136*alpha^4+48*alpha^3-144*alpha^2+28*alpha+84)*(alpha^3-alpha^2-alpha+1)+(36*alpha^9-44*alpha^8-48*alpha^7+112*alpha^6-56*alpha^5-56*alpha^4+112*alpha^3-48*alpha^2-44*alpha+36)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(-9*alpha^9+33*alpha^8-36*alpha^7-12*alpha^6+66*alpha^5-66*alpha^4+12*alpha^3+36*alpha^2-33*alpha+9)*(3*alpha^3+alpha^2+alpha+3)+(alpha^9-7*alpha^8+20*alpha^7-28*alpha^6+14*alpha^5+14*alpha^4-28*alpha^3+20*alpha^2-7*alpha+1)*(-alpha^3+3*alpha^2-3*alpha+1))*(1-alpha), -((-84*alpha^9-28*alpha^8+144*alpha^7-48*alpha^6-136*alpha^5+136*alpha^4+48*alpha^3-144*alpha^2+28*alpha+84)*(alpha^3-alpha^2-alpha+1)+(36*alpha^9-44*alpha^8-48*alpha^7+112*alpha^6-56*alpha^5-56*alpha^4+112*alpha^3-48*alpha^2-44*alpha+36)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(-9*alpha^9+33*alpha^8-36*alpha^7-12*alpha^6+66*alpha^5-66*alpha^4+12*alpha^3+36*alpha^2-33*alpha+9)*(3*alpha^3+alpha^2+alpha+3)+(alpha^9-7*alpha^8+20*alpha^7-28*alpha^6+14*alpha^5+14*alpha^4-28*alpha^3+20*alpha^2-7*alpha+1)*(-alpha^3+3*alpha^2-3*alpha+1))*(1+alpha)-((36*alpha^9-44*alpha^8-48*alpha^7+112*alpha^6-56*alpha^5-56*alpha^4+112*alpha^3-48*alpha^2-44*alpha+36)*(alpha^3-alpha^2-alpha+1)+(-9*alpha^9+33*alpha^8-36*alpha^7-12*alpha^6+66*alpha^5-66*alpha^4+12*alpha^3+36*alpha^2-33*alpha+9)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(alpha^9-7*alpha^8+20*alpha^7-28*alpha^6+14*alpha^5+14*alpha^4-28*alpha^3+20*alpha^2-7*alpha+1)*(3*alpha^3+alpha^2+alpha+3))*(1-alpha), -((36*alpha^9-44*alpha^8-48*alpha^7+112*alpha^6-56*alpha^5-56*alpha^4+112*alpha^3-48*alpha^2-44*alpha+36)*(alpha^3-alpha^2-alpha+1)+(-9*alpha^9+33*alpha^8-36*alpha^7-12*alpha^6+66*alpha^5-66*alpha^4+12*alpha^3+36*alpha^2-33*alpha+9)*(-3*alpha^3-3*alpha^2+3*alpha+3)+(alpha^9-7*alpha^8+20*alpha^7-28*alpha^6+14*alpha^5+14*alpha^4-28*alpha^3+20*alpha^2-7*alpha+1)*(3*alpha^3+alpha^2+alpha+3))*(1+alpha)-((-9*alpha^9+33*alpha^8-36*alpha^7-12*alpha^6+66*alpha^5-66*alpha^4+12*alpha^3+36*alpha^2-33*alpha+9)*(alpha^3-alpha^2-alpha+1)+(alpha^9-7*alpha^8+20*alpha^7-28*alpha^6+14*alpha^5+14*alpha^4-28*alpha^3+20*alpha^2-7*alpha+1)*(-3*alpha^3-3*alpha^2+3*alpha+3))*(1-alpha), -((-9*alpha^9+33*alpha^8-36*alpha^7-12*alpha^6+66*alpha^5-66*alpha^4+12*alpha^3+36*alpha^2-33*alpha+9)*(alpha^3-alpha^2-alpha+1)+(alpha^9-7*alpha^8+20*alpha^7-28*alpha^6+14*alpha^5+14*alpha^4-28*alpha^3+20*alpha^2-7*alpha+1)*(-3*alpha^3-3*alpha^2+3*alpha+3))*(1+alpha)-(alpha^9-7*alpha^8+20*alpha^7-28*alpha^6+14*alpha^5+14*alpha^4-28*alpha^3+20*alpha^2-7*alpha+1)*(alpha^3-alpha^2-alpha+1)*(1-alpha), -(alpha^9-7*alpha^8+20*alpha^7-28*alpha^6+14*alpha^5+14*alpha^4-28*alpha^3+20*alpha^2-7*alpha+1)*(alpha^3-alpha^2-alpha+1)*(1+alpha)};
 
-        annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                  -100},{100,100}}), graphics), Icon(coordinateSystem(
+        annotation ( Icon(coordinateSystem(
                 preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
               Rectangle(
                 extent={{-100,100},{100,-100}},
@@ -1005,19 +1002,19 @@ Derivative"), Line(
           /*
                        (`.-,')
                      .-'     ;
-                 _.-'   , `,-    ___          _             ___     _                     _           
-           _ _.-'     .'  /._   / __|__ _ _ _| |___ ___ _ _ |_ _|_ _| |_ ___ __ _ _ _ __ _| |_ ___ _ _ 
+                 _.-'   , `,-    ___          _             ___     _                     _
+           _ _.-'     .'  /._   / __|__ _ _ _| |___ ___ _ _ |_ _|_ _| |_ ___ __ _ _ _ __ _| |_ ___ _ _
          .' `  _.-.  /  ,'._;) | (__/ _` | '_| (_-</ _ \ ' \ | || ' \  _/ -_) _` | '_/ _` |  _/ _ \ '_|
-        (       .  )-| (        \___\__,_|_| |_/__/\___/_||_|___|_||_\__\___\__, |_| \__,_|\__\___/_|  
-        )`,_ ,'_,'  \_;)                                                    |___/     
+        (       .  )-| (        \___\__,_|_| |_/__/\___/_||_|___|_||_\__\___\__, |_| \__,_|\__\___/_|
+        )`,_ ,'_,'  \_;)                                                    |___/
  ('_  _,'.'  (___,))
-  `-:;.-'           
+  `-:;.-'
 
 DLR - Institute of System Dynamics and Control
 author: alexander.pollok@dlr.de
 create: 2015-03-16
 update: 2015-03-20
- 
+
   */
 
         parameter Integer order(min=1, max=3) = 2
@@ -1056,8 +1053,7 @@ update: 2015-03-20
        then {(-alpha^3+alpha^2+alpha-1)*(-alpha-1), (-alpha^3+alpha^2+alpha-1)*(-1+alpha)+(3*alpha^3+3*alpha^2-3*alpha-3)*(-alpha-1), (3*alpha^3+3*alpha^2-3*alpha-3)*(-1+alpha)+(-3*alpha^3-alpha^2-alpha-3)*(-alpha-1), (-3*alpha^3-alpha^2-alpha-3)*(-1+alpha)+(alpha^3-3*alpha^2+3*alpha-1)*(-alpha-1), (alpha^3-3*alpha^2+3*alpha-1)*(-1+alpha)}
        else {-(-alpha^9+7*alpha^8-20*alpha^7+28*alpha^6-14*alpha^5-14*alpha^4+28*alpha^3-20*alpha^2+7*alpha-1)*(-alpha^3+alpha^2+alpha-1)*(-alpha-1), -(-alpha^9+7*alpha^8-20*alpha^7+28*alpha^6-14*alpha^5-14*alpha^4+28*alpha^3-20*alpha^2+7*alpha-1)*(-alpha^3+alpha^2+alpha-1)*(-1+alpha)-((-alpha^9+7*alpha^8-20*alpha^7+28*alpha^6-14*alpha^5-14*alpha^4+28*alpha^3-20*alpha^2+7*alpha-1)*(3*alpha^3+3*alpha^2-3*alpha-3)+(9*alpha^9-33*alpha^8+36*alpha^7+12*alpha^6-66*alpha^5+66*alpha^4-12*alpha^3-36*alpha^2+33*alpha-9)*(-alpha^3+alpha^2+alpha-1))*(-alpha-1), -((-alpha^9+7*alpha^8-20*alpha^7+28*alpha^6-14*alpha^5-14*alpha^4+28*alpha^3-20*alpha^2+7*alpha-1)*(3*alpha^3+3*alpha^2-3*alpha-3)+(9*alpha^9-33*alpha^8+36*alpha^7+12*alpha^6-66*alpha^5+66*alpha^4-12*alpha^3-36*alpha^2+33*alpha-9)*(-alpha^3+alpha^2+alpha-1))*(-1+alpha)-((-alpha^9+7*alpha^8-20*alpha^7+28*alpha^6-14*alpha^5-14*alpha^4+28*alpha^3-20*alpha^2+7*alpha-1)*(-3*alpha^3-alpha^2-alpha-3)+(9*alpha^9-33*alpha^8+36*alpha^7+12*alpha^6-66*alpha^5+66*alpha^4-12*alpha^3-36*alpha^2+33*alpha-9)*(3*alpha^3+3*alpha^2-3*alpha-3)+(-36*alpha^9+44*alpha^8+48*alpha^7-112*alpha^6+56*alpha^5+56*alpha^4-112*alpha^3+48*alpha^2+44*alpha-36)*(-alpha^3+alpha^2+alpha-1))*(-alpha-1), -((-alpha^9+7*alpha^8-20*alpha^7+28*alpha^6-14*alpha^5-14*alpha^4+28*alpha^3-20*alpha^2+7*alpha-1)*(-3*alpha^3-alpha^2-alpha-3)+(9*alpha^9-33*alpha^8+36*alpha^7+12*alpha^6-66*alpha^5+66*alpha^4-12*alpha^3-36*alpha^2+33*alpha-9)*(3*alpha^3+3*alpha^2-3*alpha-3)+(-36*alpha^9+44*alpha^8+48*alpha^7-112*alpha^6+56*alpha^5+56*alpha^4-112*alpha^3+48*alpha^2+44*alpha-36)*(-alpha^3+alpha^2+alpha-1))*(-1+alpha)-((-alpha^9+7*alpha^8-20*alpha^7+28*alpha^6-14*alpha^5-14*alpha^4+28*alpha^3-20*alpha^2+7*alpha-1)*(alpha^3-3*alpha^2+3*alpha-1)+(9*alpha^9-33*alpha^8+36*alpha^7+12*alpha^6-66*alpha^5+66*alpha^4-12*alpha^3-36*alpha^2+33*alpha-9)*(-3*alpha^3-alpha^2-alpha-3)+(-36*alpha^9+44*alpha^8+48*alpha^7-112*alpha^6+56*alpha^5+56*alpha^4-112*alpha^3+48*alpha^2+44*alpha-36)*(3*alpha^3+3*alpha^2-3*alpha-3)+(84*alpha^9+28*alpha^8-144*alpha^7+48*alpha^6+136*alpha^5-136*alpha^4-48*alpha^3+144*alpha^2-28*alpha-84)*(-alpha^3+alpha^2+alpha-1))*(-alpha-1), -((-alpha^9+7*alpha^8-20*alpha^7+28*alpha^6-14*alpha^5-14*alpha^4+28*alpha^3-20*alpha^2+7*alpha-1)*(alpha^3-3*alpha^2+3*alpha-1)+(9*alpha^9-33*alpha^8+36*alpha^7+12*alpha^6-66*alpha^5+66*alpha^4-12*alpha^3-36*alpha^2+33*alpha-9)*(-3*alpha^3-alpha^2-alpha-3)+(-36*alpha^9+44*alpha^8+48*alpha^7-112*alpha^6+56*alpha^5+56*alpha^4-112*alpha^3+48*alpha^2+44*alpha-36)*(3*alpha^3+3*alpha^2-3*alpha-3)+(84*alpha^9+28*alpha^8-144*alpha^7+48*alpha^6+136*alpha^5-136*alpha^4-48*alpha^3+144*alpha^2-28*alpha-84)*(-alpha^3+alpha^2+alpha-1))*(-1+alpha)-((9*alpha^9-33*alpha^8+36*alpha^7+12*alpha^6-66*alpha^5+66*alpha^4-12*alpha^3-36*alpha^2+33*alpha-9)*(alpha^3-3*alpha^2+3*alpha-1)+(-36*alpha^9+44*alpha^8+48*alpha^7-112*alpha^6+56*alpha^5+56*alpha^4-112*alpha^3+48*alpha^2+44*alpha-36)*(-3*alpha^3-alpha^2-alpha-3)+(84*alpha^9+28*alpha^8-144*alpha^7+48*alpha^6+136*alpha^5-136*alpha^4-48*alpha^3+144*alpha^2-28*alpha-84)*(3*alpha^3+3*alpha^2-3*alpha-3)+(-126*alpha^9-126*alpha^8+104*alpha^7+40*alpha^6-148*alpha^5-148*alpha^4+40*alpha^3+104*alpha^2-126*alpha-126)*(-alpha^3+alpha^2+alpha-1))*(-alpha-1), -((9*alpha^9-33*alpha^8+36*alpha^7+12*alpha^6-66*alpha^5+66*alpha^4-12*alpha^3-36*alpha^2+33*alpha-9)*(alpha^3-3*alpha^2+3*alpha-1)+(-36*alpha^9+44*alpha^8+48*alpha^7-112*alpha^6+56*alpha^5+56*alpha^4-112*alpha^3+48*alpha^2+44*alpha-36)*(-3*alpha^3-alpha^2-alpha-3)+(84*alpha^9+28*alpha^8-144*alpha^7+48*alpha^6+136*alpha^5-136*alpha^4-48*alpha^3+144*alpha^2-28*alpha-84)*(3*alpha^3+3*alpha^2-3*alpha-3)+(-126*alpha^9-126*alpha^8+104*alpha^7+40*alpha^6-148*alpha^5-148*alpha^4+40*alpha^3+104*alpha^2-126*alpha-126)*(-alpha^3+alpha^2+alpha-1))*(-1+alpha)-((-36*alpha^9+44*alpha^8+48*alpha^7-112*alpha^6+56*alpha^5+56*alpha^4-112*alpha^3+48*alpha^2+44*alpha-36)*(alpha^3-3*alpha^2+3*alpha-1)+(84*alpha^9+28*alpha^8-144*alpha^7+48*alpha^6+136*alpha^5-136*alpha^4-48*alpha^3+144*alpha^2-28*alpha-84)*(-3*alpha^3-alpha^2-alpha-3)+(-126*alpha^9-126*alpha^8+104*alpha^7+40*alpha^6-148*alpha^5-148*alpha^4+40*alpha^3+104*alpha^2-126*alpha-126)*(3*alpha^3+3*alpha^2-3*alpha-3)+(126*alpha^9+98*alpha^8-40*alpha^7+40*alpha^6+52*alpha^5-52*alpha^4-40*alpha^3+40*alpha^2-98*alpha-126)*(-alpha^3+alpha^2+alpha-1))*(-alpha-1), -((-36*alpha^9+44*alpha^8+48*alpha^7-112*alpha^6+56*alpha^5+56*alpha^4-112*alpha^3+48*alpha^2+44*alpha-36)*(alpha^3-3*alpha^2+3*alpha-1)+(84*alpha^9+28*alpha^8-144*alpha^7+48*alpha^6+136*alpha^5-136*alpha^4-48*alpha^3+144*alpha^2-28*alpha-84)*(-3*alpha^3-alpha^2-alpha-3)+(-126*alpha^9-126*alpha^8+104*alpha^7+40*alpha^6-148*alpha^5-148*alpha^4+40*alpha^3+104*alpha^2-126*alpha-126)*(3*alpha^3+3*alpha^2-3*alpha-3)+(126*alpha^9+98*alpha^8-40*alpha^7+40*alpha^6+52*alpha^5-52*alpha^4-40*alpha^3+40*alpha^2-98*alpha-126)*(-alpha^3+alpha^2+alpha-1))*(-1+alpha)-((84*alpha^9+28*alpha^8-144*alpha^7+48*alpha^6+136*alpha^5-136*alpha^4-48*alpha^3+144*alpha^2-28*alpha-84)*(alpha^3-3*alpha^2+3*alpha-1)+(-126*alpha^9-126*alpha^8+104*alpha^7+40*alpha^6-148*alpha^5-148*alpha^4+40*alpha^3+104*alpha^2-126*alpha-126)*(-3*alpha^3-alpha^2-alpha-3)+(126*alpha^9+98*alpha^8-40*alpha^7+40*alpha^6+52*alpha^5-52*alpha^4-40*alpha^3+40*alpha^2-98*alpha-126)*(3*alpha^3+3*alpha^2-3*alpha-3)+(-84*alpha^9+28*alpha^8-16*alpha^7-112*alpha^6+184*alpha^5+184*alpha^4-112*alpha^3-16*alpha^2+28*alpha-84)*(-alpha^3+alpha^2+alpha-1))*(-alpha-1), -((84*alpha^9+28*alpha^8-144*alpha^7+48*alpha^6+136*alpha^5-136*alpha^4-48*alpha^3+144*alpha^2-28*alpha-84)*(alpha^3-3*alpha^2+3*alpha-1)+(-126*alpha^9-126*alpha^8+104*alpha^7+40*alpha^6-148*alpha^5-148*alpha^4+40*alpha^3+104*alpha^2-126*alpha-126)*(-3*alpha^3-alpha^2-alpha-3)+(126*alpha^9+98*alpha^8-40*alpha^7+40*alpha^6+52*alpha^5-52*alpha^4-40*alpha^3+40*alpha^2-98*alpha-126)*(3*alpha^3+3*alpha^2-3*alpha-3)+(-84*alpha^9+28*alpha^8-16*alpha^7-112*alpha^6+184*alpha^5+184*alpha^4-112*alpha^3-16*alpha^2+28*alpha-84)*(-alpha^3+alpha^2+alpha-1))*(-1+alpha)-((-126*alpha^9-126*alpha^8+104*alpha^7+40*alpha^6-148*alpha^5-148*alpha^4+40*alpha^3+104*alpha^2-126*alpha-126)*(alpha^3-3*alpha^2+3*alpha-1)+(126*alpha^9+98*alpha^8-40*alpha^7+40*alpha^6+52*alpha^5-52*alpha^4-40*alpha^3+40*alpha^2-98*alpha-126)*(-3*alpha^3-alpha^2-alpha-3)+(-84*alpha^9+28*alpha^8-16*alpha^7-112*alpha^6+184*alpha^5+184*alpha^4-112*alpha^3-16*alpha^2+28*alpha-84)*(3*alpha^3+3*alpha^2-3*alpha-3)+(36*alpha^9-84*alpha^8+112*alpha^7-16*alpha^6-248*alpha^5+248*alpha^4+16*alpha^3-112*alpha^2+84*alpha-36)*(-alpha^3+alpha^2+alpha-1))*(-alpha-1), -((-126*alpha^9-126*alpha^8+104*alpha^7+40*alpha^6-148*alpha^5-148*alpha^4+40*alpha^3+104*alpha^2-126*alpha-126)*(alpha^3-3*alpha^2+3*alpha-1)+(126*alpha^9+98*alpha^8-40*alpha^7+40*alpha^6+52*alpha^5-52*alpha^4-40*alpha^3+40*alpha^2-98*alpha-126)*(-3*alpha^3-alpha^2-alpha-3)+(-84*alpha^9+28*alpha^8-16*alpha^7-112*alpha^6+184*alpha^5+184*alpha^4-112*alpha^3-16*alpha^2+28*alpha-84)*(3*alpha^3+3*alpha^2-3*alpha-3)+(36*alpha^9-84*alpha^8+112*alpha^7-16*alpha^6-248*alpha^5+248*alpha^4+16*alpha^3-112*alpha^2+84*alpha-36)*(-alpha^3+alpha^2+alpha-1))*(-1+alpha)-((126*alpha^9+98*alpha^8-40*alpha^7+40*alpha^6+52*alpha^5-52*alpha^4-40*alpha^3+40*alpha^2-98*alpha-126)*(alpha^3-3*alpha^2+3*alpha-1)+(-84*alpha^9+28*alpha^8-16*alpha^7-112*alpha^6+184*alpha^5+184*alpha^4-112*alpha^3-16*alpha^2+28*alpha-84)*(-3*alpha^3-alpha^2-alpha-3)+(36*alpha^9-84*alpha^8+112*alpha^7-16*alpha^6-248*alpha^5+248*alpha^4+16*alpha^3-112*alpha^2+84*alpha-36)*(3*alpha^3+3*alpha^2-3*alpha-3)+(-9*alpha^9+47*alpha^8-116*alpha^7+156*alpha^6-78*alpha^5-78*alpha^4+156*alpha^3-116*alpha^2+47*alpha-9)*(-alpha^3+alpha^2+alpha-1))*(-alpha-1), -((126*alpha^9+98*alpha^8-40*alpha^7+40*alpha^6+52*alpha^5-52*alpha^4-40*alpha^3+40*alpha^2-98*alpha-126)*(alpha^3-3*alpha^2+3*alpha-1)+(-84*alpha^9+28*alpha^8-16*alpha^7-112*alpha^6+184*alpha^5+184*alpha^4-112*alpha^3-16*alpha^2+28*alpha-84)*(-3*alpha^3-alpha^2-alpha-3)+(36*alpha^9-84*alpha^8+112*alpha^7-16*alpha^6-248*alpha^5+248*alpha^4+16*alpha^3-112*alpha^2+84*alpha-36)*(3*alpha^3+3*alpha^2-3*alpha-3)+(-9*alpha^9+47*alpha^8-116*alpha^7+156*alpha^6-78*alpha^5-78*alpha^4+156*alpha^3-116*alpha^2+47*alpha-9)*(-alpha^3+alpha^2+alpha-1))*(-1+alpha)-((-84*alpha^9+28*alpha^8-16*alpha^7-112*alpha^6+184*alpha^5+184*alpha^4-112*alpha^3-16*alpha^2+28*alpha-84)*(alpha^3-3*alpha^2+3*alpha-1)+(36*alpha^9-84*alpha^8+112*alpha^7-16*alpha^6-248*alpha^5+248*alpha^4+16*alpha^3-112*alpha^2+84*alpha-36)*(-3*alpha^3-alpha^2-alpha-3)+(-9*alpha^9+47*alpha^8-116*alpha^7+156*alpha^6-78*alpha^5-78*alpha^4+156*alpha^3-116*alpha^2+47*alpha-9)*(3*alpha^3+3*alpha^2-3*alpha-3)+(alpha^9-9*alpha^8+36*alpha^7-84*alpha^6+126*alpha^5-126*alpha^4+84*alpha^3-36*alpha^2+9*alpha-1)*(-alpha^3+alpha^2+alpha-1))*(-alpha-1), -((-84*alpha^9+28*alpha^8-16*alpha^7-112*alpha^6+184*alpha^5+184*alpha^4-112*alpha^3-16*alpha^2+28*alpha-84)*(alpha^3-3*alpha^2+3*alpha-1)+(36*alpha^9-84*alpha^8+112*alpha^7-16*alpha^6-248*alpha^5+248*alpha^4+16*alpha^3-112*alpha^2+84*alpha-36)*(-3*alpha^3-alpha^2-alpha-3)+(-9*alpha^9+47*alpha^8-116*alpha^7+156*alpha^6-78*alpha^5-78*alpha^4+156*alpha^3-116*alpha^2+47*alpha-9)*(3*alpha^3+3*alpha^2-3*alpha-3)+(alpha^9-9*alpha^8+36*alpha^7-84*alpha^6+126*alpha^5-126*alpha^4+84*alpha^3-36*alpha^2+9*alpha-1)*(-alpha^3+alpha^2+alpha-1))*(-1+alpha)-((36*alpha^9-84*alpha^8+112*alpha^7-16*alpha^6-248*alpha^5+248*alpha^4+16*alpha^3-112*alpha^2+84*alpha-36)*(alpha^3-3*alpha^2+3*alpha-1)+(-9*alpha^9+47*alpha^8-116*alpha^7+156*alpha^6-78*alpha^5-78*alpha^4+156*alpha^3-116*alpha^2+47*alpha-9)*(-3*alpha^3-alpha^2-alpha-3)+(alpha^9-9*alpha^8+36*alpha^7-84*alpha^6+126*alpha^5-126*alpha^4+84*alpha^3-36*alpha^2+9*alpha-1)*(3*alpha^3+3*alpha^2-3*alpha-3))*(-alpha-1), -((36*alpha^9-84*alpha^8+112*alpha^7-16*alpha^6-248*alpha^5+248*alpha^4+16*alpha^3-112*alpha^2+84*alpha-36)*(alpha^3-3*alpha^2+3*alpha-1)+(-9*alpha^9+47*alpha^8-116*alpha^7+156*alpha^6-78*alpha^5-78*alpha^4+156*alpha^3-116*alpha^2+47*alpha-9)*(-3*alpha^3-alpha^2-alpha-3)+(alpha^9-9*alpha^8+36*alpha^7-84*alpha^6+126*alpha^5-126*alpha^4+84*alpha^3-36*alpha^2+9*alpha-1)*(3*alpha^3+3*alpha^2-3*alpha-3))*(-1+alpha)-((-9*alpha^9+47*alpha^8-116*alpha^7+156*alpha^6-78*alpha^5-78*alpha^4+156*alpha^3-116*alpha^2+47*alpha-9)*(alpha^3-3*alpha^2+3*alpha-1)+(alpha^9-9*alpha^8+36*alpha^7-84*alpha^6+126*alpha^5-126*alpha^4+84*alpha^3-36*alpha^2+9*alpha-1)*(-3*alpha^3-alpha^2-alpha-3))*(-alpha-1), -((-9*alpha^9+47*alpha^8-116*alpha^7+156*alpha^6-78*alpha^5-78*alpha^4+156*alpha^3-116*alpha^2+47*alpha-9)*(alpha^3-3*alpha^2+3*alpha-1)+(alpha^9-9*alpha^8+36*alpha^7-84*alpha^6+126*alpha^5-126*alpha^4+84*alpha^3-36*alpha^2+9*alpha-1)*(-3*alpha^3-alpha^2-alpha-3))*(-1+alpha)-(alpha^9-9*alpha^8+36*alpha^7-84*alpha^6+126*alpha^5-126*alpha^4+84*alpha^3-36*alpha^2+9*alpha-1)*(alpha^3-3*alpha^2+3*alpha-1)*(-alpha-1), -(alpha^9-9*alpha^8+36*alpha^7-84*alpha^6+126*alpha^5-126*alpha^4+84*alpha^3-36*alpha^2+9*alpha-1)*(alpha^3-3*alpha^2+3*alpha-1)*(-1+alpha)};
 
-        annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                  -100},{100,100}}), graphics), Icon(coordinateSystem(
+        annotation ( Icon(coordinateSystem(
                 preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
               Rectangle(
                 extent={{-100,100},{100,-100}},
@@ -1103,13 +1099,13 @@ Integrator"), Text(
           /*
                        (`.-,')
                      .-'     ;
-                 _.-'   , `,-     ___          _        _                ___                     _          
-           _ _.-'     .'  /._    / _ \ _  _ __| |_ __ _| |___ _  _ _ __ / _ \ _ __  ___ _ _ __ _| |_ ___ _ _ 
+                 _.-'   , `,-     ___          _        _                ___                     _
+           _ _.-'     .'  /._    / _ \ _  _ __| |_ __ _| |___ _  _ _ __ / _ \ _ __  ___ _ _ __ _| |_ ___ _ _
          .' `  _.-.  /  ,'._;)  | (_) | || (_-<  _/ _` | / _ \ || | '_ V (_) | '_ \/ -_) '_/ _` |  _/ _ \ '_|
-        (       .  )-| (         \___/ \_,_/__/\__\__,_|_\___/\_,_| .__/\___/| .__/\___|_| \__,_|\__\___/_| 
-        )`,_ ,'_,'  \_;)                                          |_|        |_|                        
+        (       .  )-| (         \___/ \_,_/__/\__\__,_|_\___/\_,_| .__/\___/| .__/\___|_| \__,_|\__\___/_|
+        )`,_ ,'_,'  \_;)                                          |_|        |_|
  ('_  _,'.'  (___,))
-  `-:;.-'           
+  `-:;.-'
 
 DLR - Institute of System Dynamics and Control
 author: alexander.pollok@dlr.de
@@ -1168,8 +1164,7 @@ Don't use unless you have a good reason.
         u = transferFunction.u;
         y = transferFunction.y;
 
-        annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                  -100},{100,100}}), graphics), Icon(coordinateSystem(
+        annotation ( Icon(coordinateSystem(
                 preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
               Rectangle(
                 extent={{-100,100},{100,-100}},
@@ -1179,7 +1174,7 @@ Don't use unless you have a good reason.
               Text(
                 extent={{-100,72},{100,34}},
                 lineColor={144,144,144},
-                textString="Oustaloup 
+                textString="Oustaloup
 Operator"),   Text(
                 extent={{-24,-22},{18,-72}},
                 lineColor={144,144,144},
@@ -2189,16 +2184,13 @@ Operator"),   Text(
     equation
       connect(halfDifferentiator.u, inverse.y1) annotation (Line(
           points={{41,40},{58,40}},
-          color={0,0,127},
-          smooth=Smooth.None));
+          color={0,0,127}));
       connect(inverse.u1, halfDifferentiator.y) annotation (Line(
           points={{2,40},{19,40}},
-          color={0,0,127},
-          smooth=Smooth.None));
+          color={0,0,127}));
       connect(sin.y, inverse.u) annotation (Line(
           points={{-19,40},{-2,40}},
-          color={0,0,127},
-          smooth=Smooth.None));
+          color={0,0,127}));
       annotation (
         Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,0},{
                 100,100}}), graphics={Text(
@@ -2351,10 +2343,7 @@ Operator"),   Text(
           annotation (Line(points={{-40,0},{-25,0},{-10,0}}, color={0,127,0}));
         connect(slab1.flange_b, constantForce1.flange)
           annotation (Line(points={{10,0},{26,0},{40,0}}, color={0,127,0}));
-        annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                  -100},{100,100}}), graphics),
-          experiment(StopTime=10),
-          __Dymola_experimentSetupOutput);
+        annotation (          experiment(StopTime=10));
       end StressStrain;
 
       model ViscoelasticSlab
@@ -2395,10 +2384,7 @@ Slab"),       Rectangle(
               Text(
                 extent={{-140,140},{160,100}},
                 textString="%name",
-                lineColor={0,0,255})}),
-          Diagram(coordinateSystem(
-              preserveAspectRatio=false,
-              extent={{-100,-100},{100,100}}), graphics));
+                lineColor={0,0,255})}));
       end ViscoelasticSlab;
     end Viscoelasticity;
 
@@ -2415,7 +2401,6 @@ Slab"),       Rectangle(
         Modelica.Thermal.HeatTransfer.Sources.PrescribedHeatFlow
           prescribedHeatFlow annotation (Placement(transformation(
               extent={{-10,-10},{10,10}},
-              rotation=0,
               origin={20,10})));
         FractionalOrder.Examples.FractionalPIDControl.FPID FPID(
           alpha1=-0.5,
@@ -2440,12 +2425,10 @@ Slab"),       Rectangle(
           annotation (Placement(transformation(extent={{-56,-36},{-44,-24}})));
         Modelica.Blocks.Math.Max max annotation (Placement(transformation(
               extent={{-4,-4},{4,4}},
-              rotation=0,
               origin={-8,10})));
         Modelica.Blocks.Sources.Constant const(k=0) annotation (Placement(
               transformation(
               extent={{-4,-4},{4,4}},
-              rotation=0,
               origin={-28,0})));
         DynamicConductor dynamicConductor(
           nEle=10,
@@ -2476,13 +2459,11 @@ Slab"),       Rectangle(
           annotation (Placement(transformation(extent={{86,0},{106,20}})));
         Modelica.Blocks.Math.Min min annotation (Placement(transformation(
               extent={{-5,-5},{5,5}},
-              rotation=0,
               origin={-27,13})));
         Modelica.Blocks.Sources.Constant const1(k=3000)
                                                     annotation (Placement(
               transformation(
               extent={{-4,-4},{4,4}},
-              rotation=0,
               origin={-44,32})));
       equation
         connect(max.y, prescribedHeatFlow.Q_flow) annotation (Line(points={{-3.6,10},
@@ -2521,8 +2502,7 @@ Slab"),       Rectangle(
         annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-140,
                   -60},{160,60}}),        graphics), Icon(coordinateSystem(
                 extent={{-140,-60},{160,60}})),
-          experiment(StopTime=100),
-          __Dymola_experimentSetupOutput);
+          experiment(StopTime=100));
       end ControlledTemperatureFPID;
 
       model DynamicConductor
@@ -2533,15 +2513,15 @@ Slab"),       Rectangle(
 
         /*
 
-  ___  _    ___      _                      _                     _         _           
- |   \| |  | _ \  __| |_  _ _ _  __ _ _ __ (_)__   __ ___ _ _  __| |_  _ __| |_ ___ _ _ 
+  ___  _    ___      _                      _                     _         _
+ |   \| |  | _ \  __| |_  _ _ _  __ _ _ __ (_)__   __ ___ _ _  __| |_  _ __| |_ ___ _ _
  | |) | |__|   / / _` | || | ' \/ _` | '  \| / _| / _/ _ \ ' \/ _` | || / _|  _/ _ \ '_|
- |___/|____|_|_\ \__,_|\_, |_||_\__,_|_|_|_|_\__| \__\___/_||_\__,_|\_,_\__|\__\___/_|  
-                       |__/                                                             
-                       
-  Dynamic conductor, consisting of alternating thermal capacitors and conductors. 
+ |___/|____|_|_\ \__,_|\_, |_||_\__,_|_|_|_|_\__| \__\___/_||_\__,_|\_,_\__|\__\___/_|
+                       |__/
+
+  Dynamic conductor, consisting of alternating thermal capacitors and conductors.
   At the borders are conductor-elements, so that capacities can be connected to the pipe without computational inconveniences.
-  That means, that there are [nEle+1] conductor-elements and [nEle] capacity-elements.   
+  That means, that there are [nEle+1] conductor-elements and [nEle] capacity-elements.
   */
 
         Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a portA
@@ -2604,21 +2584,18 @@ Slab"),       Rectangle(
               Line(
                 points={{0,40},{0,-40}},
                 color={135,135,135},
-                smooth=Smooth.None,
                 thickness=0.5),
               Polygon(
                 points={{-38,2},{-38,-2},{30,-2},{28,-8},{42,0},{28,8},{30,2},{10,2},{
                     -38,2}},
                 pattern=LinePattern.None,
-                smooth=Smooth.None,
                 fillColor={175,175,175},
                 fillPattern=FillPattern.Solid,
                 lineColor={0,0,0}),
               Text(
                 extent={{-150,140},{150,100}},
                 textString="%name",
-                lineColor={0,0,255})}),
-                                      Diagram(graphics));
+                lineColor={0,0,255})}));
       end DynamicConductor;
 
       block FPID "Fractional PID model"
@@ -2633,7 +2610,7 @@ Slab"),       Rectangle(
          parameter Real k3 = 10 "Gain of third element";
 
         Modelica.Blocks.Math.Add3 Add annotation (Placement(transformation(extent={{40,-10},
-                  {60,10}},      rotation=0)));
+                  {60,10}})));
         Modelica.Blocks.Math.Gain gain1(k=k1)
           annotation (Placement(transformation(extent={{-10,40},{10,60}})));
         Modelica.Blocks.Math.Gain gain2(k=k2)
@@ -2688,22 +2665,17 @@ Slab"),       Rectangle(
         annotation (defaultComponentName="PID",
           Icon(
               coordinateSystem(preserveAspectRatio=true,
-                  extent={{-100.0,-100.0},{100.0,100.0}},
-                  initialScale=0.1),
+                  extent={{-100.0,-100.0},{100.0,100.0}}),
                   graphics={
-              Line(visible=true,
-                  points={{-80.0,78.0},{-80.0,-90.0}},
+              Line(points={{-80.0,78.0},{-80.0,-90.0}},
                   color={192,192,192}),
-            Polygon(visible=true,
-                lineColor={192,192,192},
+            Polygon(lineColor={192,192,192},
                 fillColor={192,192,192},
                 fillPattern=FillPattern.Solid,
                 points={{-80.0,90.0},{-88.0,68.0},{-72.0,68.0},{-80.0,90.0}}),
-            Line(visible=true,
-                points={{-90.0,-80.0},{82.0,-80.0}},
+            Line(points={{-90.0,-80.0},{82.0,-80.0}},
                 color={192,192,192}),
-            Polygon(visible=true,
-                lineColor={192,192,192},
+            Polygon(lineColor={192,192,192},
                 fillColor={192,192,192},
                 fillPattern=FillPattern.Solid,
                 points={{90.0,-80.0},{68.0,-72.0},{68.0,-88.0},{90.0,-80.0}}),
@@ -2712,9 +2684,7 @@ Slab"),       Rectangle(
             Text(
                 lineColor={192,192,192},
                 extent={{-20.0,-60.0},{80.0,-20.0}},
-                textString="FPID")}),
-          Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-                  100}}), graphics));
+                textString="FPID")}));
       end FPID;
     end FractionalPIDControl;
 
@@ -2765,10 +2735,7 @@ Slab"),       Rectangle(
         connect(prescribedHeatflow.port, semiInfiniteSlab1.heatPort)
           annotation (Line(points={{-20,-30},{-6,-30},{-6,-16},{24,-16},{24,-30},
                 {40,-30}}, color={191,0,0}));
-      annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                  -100},{100,100}}),
-                                   graphics),
-          experiment(
+      annotation (          experiment(
             StopTime=20));
     end ThermalDiffusion;
 
@@ -2783,9 +2750,7 @@ Slab"),       Rectangle(
         connect(semiInfiniteSlab.heatPort, semiInfiniteSlab1.heatPort)
           annotation (Line(points={{40,30},{30,30},{20,30},{20,-30},{40,-30}},
               color={191,0,0}));
-      annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-                  -100},{100,100}})),
-          experiment(
+      annotation (          experiment(
             StopTime=20));
     end ThermalDiffusion2;
 
@@ -2838,8 +2803,7 @@ Slab"),       Rectangle(
                 lineColor={135,135,135},
                 fillPattern=FillPattern.Solid,
                 fillColor={255,255,255})}),
-          experiment(StopTime=432000, Tolerance=1e-006),
-          __Dymola_experimentSetupOutput);
+          experiment(StopTime=432000, Tolerance=1e-006));
     end PlanetSurfaceTemperature;
 
     model SemiInfiniteSlab
