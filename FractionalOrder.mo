@@ -19,6 +19,8 @@ update: 2015-07-27
 
 */
 
+import Modelica.Units.SI;
+
 package UsersGuide "User's Guide"
   extends Modelica.Icons.Information;
 
@@ -2087,7 +2089,7 @@ Operator"),   Text(
         order=3,
         initType=Modelica.Blocks.Types.Init.SteadyState)
         annotation (Placement(transformation(extent={{0,-50},{20,-30}})));
-      Modelica.Blocks.Sources.Cosine cos(freqHz=1/(2*Modelica.Constants.pi))
+      Modelica.Blocks.Sources.Cosine cos(f=1/(2*Modelica.Constants.pi))
         annotation (Placement(transformation(extent={{-60,10},{-40,30}})));
       Approximations.OustaloupOperator o1(order=3, lambda=-1)
         annotation (Placement(transformation(extent={{0,70},{20,90}})));
@@ -2177,7 +2179,7 @@ Operator"),   Text(
 
       Approximations.OustaloupOperator halfDifferentiator
         annotation (Placement(transformation(extent={{40,30},{20,50}})));
-      Modelica.Blocks.Sources.Sine   sin(freqHz=1/(2*Modelica.Constants.pi))
+      Modelica.Blocks.Sources.Sine   sin(f=1/(2*Modelica.Constants.pi))
         annotation (Placement(transformation(extent={{-40,30},{-20,50}})));
       Utilities.Inverse inverse
         annotation (Placement(transformation(extent={{0,20},{60,60}})));
@@ -2244,7 +2246,7 @@ Operator"),   Text(
 
       Approximations.Discouraged.CarlsonDerivative c6(alpha=0.25, order=1)
         annotation (Placement(transformation(extent={{0,-100},{20,-80}})));
-      Modelica.Blocks.Sources.Cosine cos(freqHz=1/(2*Modelica.Constants.pi))
+      Modelica.Blocks.Sources.Cosine cos(f=1/(2*Modelica.Constants.pi))
         annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
       Modelica.Blocks.Continuous.Derivative derivative
         annotation (Placement(transformation(extent={{0,-130},{20,-110}})));
@@ -2258,7 +2260,7 @@ Operator"),   Text(
         annotation (Placement(transformation(extent={{0,-70},{20,-50}})));
       Approximations.Discouraged.CarlsonIntegrator c3(alpha=0.25, order=1)
         annotation (Placement(transformation(extent={{0,-10},{20,10}})));
-      Modelica.Blocks.Sources.Sine sine_neg(freqHz=1/(2*Modelica.Constants.pi),
+      Modelica.Blocks.Sources.Sine sine_neg(f=1/(2*Modelica.Constants.pi),
           amplitude=-1)
         annotation (Placement(transformation(extent={{-60,-110},{-40,-90}})));
       Approximations.Discouraged.CarlsonDerivative c4(alpha=0.75, order=1)
@@ -2295,7 +2297,7 @@ Operator"),   Text(
         annotation (Placement(transformation(extent={{0,-100},{20,-80}})));
       Approximations.Discouraged.XueIntegrator c5(order=1)
         annotation (Placement(transformation(extent={{0,-70},{20,-50}})));
-      Modelica.Blocks.Sources.Cosine cos_neg(freqHz=1/(2*Modelica.Constants.pi),
+      Modelica.Blocks.Sources.Cosine cos_neg(f=1/(2*Modelica.Constants.pi),
           amplitude=-1)
         annotation (Placement(transformation(extent={{-60,-110},{-40,-90}})));
       Approximations.Discouraged.XueIntegrator c4(alpha=0.75, order=1)
@@ -2348,13 +2350,12 @@ Operator"),   Text(
 
       model ViscoelasticSlab
         "Model of a viscoelastic material, using fractional derivatives"
-        extends
-          Modelica.Mechanics.Translational.Interfaces.PartialCompliantWithRelativeStates;
+        extends Modelica.Mechanics.Translational.Interfaces.PartialCompliantWithRelativeStates;
         parameter Real k = 1e6 "ViscoelasticityConstant";
         parameter Real lambda(min=0,max=1) = 0.5
           "Alpha (0 = elastic, 1 = viscous)";
-        parameter Modelica.SIunits.Position s_rel0=1 "Unstretched slab length";
-        parameter Modelica.SIunits.Area A = 0.01 "Area of slab [m^2]";
+        parameter SI.Position s_rel0=1 "Unstretched slab length";
+        parameter SI.Area A = 0.01 "Area of slab [m^2]";
 
         Approximations.OustaloupOperator partialder(order=3, lambda=lambda);
 
@@ -2508,9 +2509,6 @@ Slab"),       Rectangle(
       model DynamicConductor
         "Model of a discretized 1-D heat conducting element"
 
-        import Modelica.SIunits;
-        import Modelica.Math;
-
         /*
 
   ___  _    ___      _                      _                     _         _
@@ -2532,20 +2530,20 @@ Slab"),       Rectangle(
 
       parameter Integer nEle(min=2) = 3 "Number of lumped elements";
 
-      parameter Modelica.SIunits.HeatCapacity C = 1 "Total heat capacity [J/K]";
-      parameter Modelica.SIunits.ThermalConductance G = 1
+      parameter SI.HeatCapacity C = 1 "Total heat capacity [J/K]";
+      parameter SI.ThermalConductance G = 1
           "Total thermal conductance [W/K]";
 
-          parameter Modelica.SIunits.Temperature T_start = 300
+          parameter SI.Temperature T_start = 300
           "Start temperature [K]";
 
-      final parameter Modelica.SIunits.HeatCapacity cellC = C/nEle
+      final parameter SI.HeatCapacity cellC = C/nEle
           "Heat capacity per cell";
-      final parameter Modelica.SIunits.ThermalConductance cellG = G*(nEle+1)
+      final parameter SI.ThermalConductance cellG = G*(nEle+1)
           "Heat conductance per cell";
 
-      Modelica.SIunits.Temperature T[nEle];
-      Modelica.SIunits.HeatFlowRate Q[nEle+1];
+      SI.Temperature T[nEle];
+      SI.HeatFlowRate Q[nEle+1];
 
       equation
       Q[1] = -(T[1]-portA.T)*cellG;
@@ -2812,8 +2810,8 @@ Slab"),       Rectangle(
       parameter Real k = 200 "Thermal conductivity [W/(m*K)]";
       parameter Real alpha = 1e-4 "Thermal diffusivity [m^2/s]";
 
-      parameter Modelica.SIunits.Area A = 0.01 "Cross section [m^2]";
-      parameter Modelica.SIunits.Temperature T_0 = 300
+      parameter SI.Area A = 0.01 "Cross section [m^2]";
+      parameter SI.Temperature T_0 = 300
           "Starting temperature [K]";
 
       Modelica.Thermal.HeatTransfer.Interfaces.HeatPort_a heatPort   annotation (Placement(transformation(extent={{-110,-10},{-90,10}})));
@@ -2853,8 +2851,8 @@ slab"),     Text(
 
       parameter Real offset=0 "Offset of output signal";
 
-    parameter Modelica.SIunits.Frequency fStart = 0.1 "Starting frequency";
-    parameter Modelica.SIunits.Time tDouble = 10
+    parameter SI.Frequency fStart = 0.1 "Starting frequency";
+    parameter SI.Time tDouble = 10
         "Time span in which the frequency doubles";
 
     Real coord(start=0);
@@ -3056,6 +3054,5 @@ happens")}));
               extent={{-300,-200},{300,200}}), graphics));
     end Inverse;
   end Utilities;
-
-  annotation (uses(Modelica(version="3.2.1")));
+  annotation (uses(Modelica(version="4.0.0")));
 end FractionalOrder;
